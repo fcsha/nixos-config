@@ -43,6 +43,10 @@
 
       window-rules = [
         {
+          geometry-corner-radius = 0;
+          clip-to-geometry = true;
+        }
+        {
           matches = [ { app-id = ''^org\.wezfurlong\.wezterm$''; } ];
           default-column-width = { };
         }
