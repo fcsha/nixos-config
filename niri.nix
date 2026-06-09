@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.niri = {
     package = pkgs.niri;
@@ -38,11 +38,6 @@
           color = "#0007";
         };
       };
-
-      spawn-at-startup = [
-        { command = [ "swaybg" "-i" "${config.home.homeDirectory}/nixos-config/wallpapers/世界很温柔—《龙族》上杉绘梨衣.png" "-m" "fill" ]; }
-        { command = [ "waybar" ]; }
-      ];
 
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 

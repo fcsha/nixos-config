@@ -23,7 +23,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-          home-manager.users.fc = { pkgs, ... }: {
+          home-manager.users.fc = { config, pkgs, ... }: {
             home.stateVersion = "26.05";
 
             home.packages = with pkgs; [
@@ -46,6 +46,19 @@
               gtk-theme = "Adwaita-dark";
             };
 
+            systemd.user.services.swaybg = {
+              Unit = {
+                Description = "Wayland wallpaper daemon";
+                PartOf = [ "graphical-session.target" ];
+                After = [ "graphical-session.target" ];
+              };
+              Service = {
+                ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${config.home.homeDirectory}/nixos-config/wallpapers/世界很温柔—《龙族》上杉绘梨衣.png -m fill";
+                Restart = "on-failure";
+              };
+              Install.WantedBy = [ "graphical-session.target" ];
+            };
+
             imports = [
               niri.homeModules.config
               ./niri.nix
@@ -62,6 +75,7 @@
 
             programs.waybar = {
               enable = true;
+              systemd.enable = true;
               settings.mainBar = {
                 layer = "top";
                 position = "top";
