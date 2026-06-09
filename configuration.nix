@@ -17,6 +17,14 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 7d";
+  };
+
+  nix.optimise.automatic = true;
+
   networking.hostName = "nixos"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
