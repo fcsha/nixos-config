@@ -7,9 +7,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, niri, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -26,7 +30,10 @@
               pavucontrol
             ];
 
-            xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
+            imports = [
+              niri.homeModules.config
+              ./niri.nix
+            ];
 
             programs.git = {
               enable = true;
