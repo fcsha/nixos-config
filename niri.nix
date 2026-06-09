@@ -4,6 +4,8 @@
     package = pkgs.niri;
 
     settings = {
+      prefer-no-csd = true;
+
       input = {
         keyboard.numlock = true;
         touchpad = {
