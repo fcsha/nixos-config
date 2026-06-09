@@ -77,6 +77,16 @@
     git
   ];
 
+  fonts.packages = with pkgs; [
+    noto-fonts-cjk-sans
+    maple-mono.NF-CN
+  ];
+
+  fonts.fontconfig.defaultFonts = {
+    sansSerif = [ "Noto Sans CJK SC" ];
+    monospace = [ "Maple Mono NF CN" ];
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
