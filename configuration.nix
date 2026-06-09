@@ -84,6 +84,8 @@
     wget
     git
     alacritty
+    fuzzel
+    swaylock
   ];
 
   fonts.packages = with pkgs; [
