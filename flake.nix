@@ -18,12 +18,15 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
           home-manager.users.fc = { pkgs, ... }: {
             home.stateVersion = "26.05";
 
             home.packages = with pkgs; [
               pavucontrol
             ];
+
+            xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
 
             programs.git = {
               enable = true;
