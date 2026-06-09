@@ -84,6 +84,10 @@
     wget
     git
     alacritty
+    brave
+    nautilus
+    fastfetch
+    opencode
     fuzzel
     swaylock-effects
     swaybg
