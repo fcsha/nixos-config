@@ -101,11 +101,6 @@
                 };
               };
 
-              systemd = {
-                enable = true;
-                targets = [ "niri.service" ];
-              };
-
               style = ''
                 * {
                   border: none;
