@@ -57,7 +57,7 @@
       ];
 
       binds = {
-        "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
+        "Mod+Shift+Slash" = { hotkey-overlay.title = "显示快捷键帮助"; action.show-hotkey-overlay = [ ]; };
 
         "Mod+T" = {
           hotkey-overlay.title = "打开终端：alacritty";
@@ -88,26 +88,26 @@
         "XF86MonBrightnessUp" = { allow-when-locked = true; action.spawn = [ "brightnessctl" "--class=backlight" "set" "+10%" ]; };
         "XF86MonBrightnessDown" = { allow-when-locked = true; action.spawn = [ "brightnessctl" "--class=backlight" "set" "10%-" ]; };
 
-        "Mod+O" = { repeat = false; action.toggle-overview = [ ]; };
-        "Mod+Q" = { repeat = false; action.close-window = [ ]; };
+        "Mod+O" = { repeat = false; hotkey-overlay.title = "打开概览"; action.toggle-overview = [ ]; };
+        "Mod+Q" = { repeat = false; hotkey-overlay.title = "关闭当前窗口"; action.close-window = [ ]; };
 
-        "Mod+Left".action.focus-column-left = [ ];
+        "Mod+Left" = { hotkey-overlay.title = "聚焦左侧列"; action.focus-column-left = [ ]; };
         "Mod+Down".action.focus-window-down = [ ];
         "Mod+Up".action.focus-window-up = [ ];
-        "Mod+Right".action.focus-column-right = [ ];
-        "Mod+H".action.focus-column-left = [ ];
+        "Mod+Right" = { hotkey-overlay.title = "聚焦右侧列"; action.focus-column-right = [ ]; };
+        "Mod+H" = { hotkey-overlay.title = "聚焦左侧列"; action.focus-column-left = [ ]; };
         "Mod+J".action.focus-window-down = [ ];
         "Mod+K".action.focus-window-up = [ ];
-        "Mod+L".action.focus-column-right = [ ];
+        "Mod+L" = { hotkey-overlay.title = "聚焦右侧列"; action.focus-column-right = [ ]; };
 
-        "Mod+Ctrl+Left".action.move-column-left = [ ];
+        "Mod+Ctrl+Left" = { hotkey-overlay.title = "向左移动列"; action.move-column-left = [ ]; };
         "Mod+Ctrl+Down".action.move-window-down = [ ];
         "Mod+Ctrl+Up".action.move-window-up = [ ];
-        "Mod+Ctrl+Right".action.move-column-right = [ ];
-        "Mod+Ctrl+H".action.move-column-left = [ ];
+        "Mod+Ctrl+Right" = { hotkey-overlay.title = "向右移动列"; action.move-column-right = [ ]; };
+        "Mod+Ctrl+H" = { hotkey-overlay.title = "向左移动列"; action.move-column-left = [ ]; };
         "Mod+Ctrl+J".action.move-window-down = [ ];
         "Mod+Ctrl+K".action.move-window-up = [ ];
-        "Mod+Ctrl+L".action.move-column-right = [ ];
+        "Mod+Ctrl+L" = { hotkey-overlay.title = "向右移动列"; action.move-column-right = [ ]; };
 
         "Mod+Home".action.focus-column-first = [ ];
         "Mod+End".action.focus-column-last = [ ];
@@ -132,14 +132,14 @@
         "Mod+Shift+Ctrl+K".action.move-column-to-monitor-up = [ ];
         "Mod+Shift+Ctrl+L".action.move-column-to-monitor-right = [ ];
 
-        "Mod+Page_Down".action.focus-workspace-down = [ ];
-        "Mod+Page_Up".action.focus-workspace-up = [ ];
-        "Mod+U".action.focus-workspace-down = [ ];
-        "Mod+I".action.focus-workspace-up = [ ];
-        "Mod+Ctrl+Page_Down".action.move-column-to-workspace-down = [ ];
-        "Mod+Ctrl+Page_Up".action.move-column-to-workspace-up = [ ];
-        "Mod+Ctrl+U".action.move-column-to-workspace-down = [ ];
-        "Mod+Ctrl+I".action.move-column-to-workspace-up = [ ];
+        "Mod+Page_Down" = { hotkey-overlay.title = "切换到下一个工作区"; action.focus-workspace-down = [ ]; };
+        "Mod+Page_Up" = { hotkey-overlay.title = "切换到上一个工作区"; action.focus-workspace-up = [ ]; };
+        "Mod+U" = { hotkey-overlay.title = "切换到下一个工作区"; action.focus-workspace-down = [ ]; };
+        "Mod+I" = { hotkey-overlay.title = "切换到上一个工作区"; action.focus-workspace-up = [ ]; };
+        "Mod+Ctrl+Page_Down" = { hotkey-overlay.title = "移动列到下一个工作区"; action.move-column-to-workspace-down = [ ]; };
+        "Mod+Ctrl+Page_Up" = { hotkey-overlay.title = "移动列到上一个工作区"; action.move-column-to-workspace-up = [ ]; };
+        "Mod+Ctrl+U" = { hotkey-overlay.title = "移动列到下一个工作区"; action.move-column-to-workspace-down = [ ]; };
+        "Mod+Ctrl+I" = { hotkey-overlay.title = "移动列到上一个工作区"; action.move-column-to-workspace-up = [ ]; };
         "Mod+Shift+Page_Down".action.move-workspace-down = [ ];
         "Mod+Shift+Page_Up".action.move-workspace-up = [ ];
         "Mod+Shift+U".action.move-workspace-down = [ ];
@@ -177,15 +177,15 @@
         "Mod+Ctrl+8".action.move-column-to-workspace = 8;
         "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
-        "Mod+BracketLeft".action.consume-or-expel-window-left = [ ];
-        "Mod+BracketRight".action.consume-or-expel-window-right = [ ];
+        "Mod+BracketLeft" = { hotkey-overlay.title = "向左吸收或挤出窗口"; action.consume-or-expel-window-left = [ ]; };
+        "Mod+BracketRight" = { hotkey-overlay.title = "向右吸收或挤出窗口"; action.consume-or-expel-window-right = [ ]; };
         "Mod+Comma".action.consume-window-into-column = [ ];
         "Mod+Period".action.expel-window-from-column = [ ];
-        "Mod+R".action.switch-preset-column-width = [ ];
+        "Mod+R" = { hotkey-overlay.title = "切换预设列宽"; action.switch-preset-column-width = [ ]; };
         "Mod+Shift+R".action.switch-preset-column-width-back = [ ];
         "Mod+Ctrl+Shift+R".action.switch-preset-window-height = [ ];
         "Mod+Ctrl+R".action.reset-window-height = [ ];
-        "Mod+F".action.maximize-column = [ ];
+        "Mod+F" = { hotkey-overlay.title = "最大化列"; action.maximize-column = [ ]; };
         "Mod+Shift+F".action.fullscreen-window = [ ];
         "Mod+M".action.maximize-window-to-edges = [ ];
         "Mod+Ctrl+F".action.expand-column-to-available-width = [ ];
@@ -195,15 +195,15 @@
         "Mod+Equal".action.set-column-width = "+10%";
         "Mod+Shift+Minus".action.set-window-height = "-10%";
         "Mod+Shift+Equal".action.set-window-height = "+10%";
-        "Mod+V".action.toggle-window-floating = [ ];
-        "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
+        "Mod+V" = { hotkey-overlay.title = "在浮动和平铺之间移动窗口"; action.toggle-window-floating = [ ]; };
+        "Mod+Shift+V" = { hotkey-overlay.title = "切换浮动/平铺焦点"; action.switch-focus-between-floating-and-tiling = [ ]; };
         "Mod+W".action.toggle-column-tabbed-display = [ ];
 
-        "Print".action.screenshot = [ ];
+        "Print" = { hotkey-overlay.title = "截图"; action.screenshot = [ ]; };
         "Ctrl+Print".action.screenshot-screen = [ ];
         "Alt+Print".action.screenshot-window = [ ];
         "Mod+Escape" = { allow-inhibiting = false; action.toggle-keyboard-shortcuts-inhibit = [ ]; };
-        "Mod+Shift+E".action.quit = [ ];
+        "Mod+Shift+E" = { hotkey-overlay.title = "退出 niri"; action.quit = [ ]; };
         "Ctrl+Alt+Delete".action.quit = [ ];
         "Mod+Shift+P".action.power-off-monitors = [ ];
       };
