@@ -41,6 +41,10 @@
         };
       };
 
+      spawn-at-startup = [
+        { command = [ "fcitx5" ]; }
+      ];
+
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 
       window-rules = [
