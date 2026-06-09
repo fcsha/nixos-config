@@ -85,7 +85,7 @@
     git
     alacritty
     fuzzel
-    swaylock
+    swaylock-effects
     swaybg
   ];
 
