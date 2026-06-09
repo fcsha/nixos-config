@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   programs.niri = {
     package = pkgs.niri;
@@ -40,6 +40,7 @@
       };
 
       spawn-at-startup = [
+        { command = [ "swaybg" "-i" "${config.home.homeDirectory}/nixos-config/wallpapers/世界很温柔—《龙族》上杉绘梨衣.png" "-m" "fill" ]; }
         { command = [ "waybar" ]; }
       ];
 
@@ -69,7 +70,34 @@
         };
         "Super+Alt+L" = {
           hotkey-overlay.title = "锁定屏幕：swaylock";
-          action.spawn = "swaylock";
+          action.spawn = [
+            "swaylock"
+            "--color"
+            "1e1e2e"
+            "--indicator"
+            "--indicator-radius"
+            "100"
+            "--indicator-thickness"
+            "8"
+            "--text-color"
+            "cdd6f4"
+            "--ring-color"
+            "89b4fa"
+            "--inside-color"
+            "00000000"
+            "--line-color"
+            "00000000"
+            "--separator-color"
+            "00000000"
+            "--key-hl-color"
+            "a6e3a1"
+            "--bs-hl-color"
+            "f38ba8"
+            "--ring-ver-color"
+            "f9e2af"
+            "--ring-wrong-color"
+            "f38ba8"
+          ];
         };
         "Super+Alt+S" = {
           allow-when-locked = true;

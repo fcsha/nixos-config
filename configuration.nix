@@ -86,6 +86,7 @@
     alacritty
     fuzzel
     swaylock
+    swaybg
   ];
 
   fonts.packages = with pkgs; [
@@ -99,6 +100,12 @@
   };
 
   programs.niri.enable = true;
+  programs.dconf.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  };
 
   services.greetd = {
     enable = true;
