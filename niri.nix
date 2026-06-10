@@ -8,6 +8,9 @@
       prefer-no-csd = true;
 
       outputs = {
+        "Unknown Unknown Unknown" = {
+          scale = 2.0;
+        };
         "Lenovo Group Limited 0x8A90 Unknown" = {
           mode = {
             width = 2880;
