@@ -5,7 +5,9 @@
 
   home.packages = with pkgs; [
     fuzzel
+    keepassxc
     pavucontrol
+    rustdesk-flutter
   ];
 
   gtk = {
@@ -34,6 +36,25 @@
       Restart = "on-failure";
     };
     Install.WantedBy = [ "graphical-session.target" ];
+  };
+
+  programs.rclone = {
+    enable = true;
+    remotes.jianguoyun = {
+      config = {
+        type = "webdav";
+        url = "https://dav.jianguoyun.com/dav/";
+        vendor = "other";
+        user = "fcsha@qq.com";
+      };
+      secrets = {
+        pass = "${config.home.homeDirectory}/.secrets/rclone-jianguoyun-pass";
+      };
+      mounts."" = {
+        enable = true;
+        mountPoint = "${config.home.homeDirectory}/jianguoyun";
+      };
+    };
   };
 
   imports = [

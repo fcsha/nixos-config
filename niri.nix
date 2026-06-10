@@ -27,6 +27,7 @@
 
       input = {
         keyboard.numlock = true;
+        mouse.accel-profile = "flat";
         touchpad = {
           tap = true;
           natural-scroll = true;

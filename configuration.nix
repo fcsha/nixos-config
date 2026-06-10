@@ -5,6 +5,8 @@
 { config, lib, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   nix.gc = {
     automatic = true;
     dates = "daily";
