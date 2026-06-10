@@ -65,9 +65,9 @@
       "niri/workspaces" = {
         format = "{icon}";
         format-icons = {
-          active = "";
-          focused = "";
-          default = "";
+          active = "";
+          focused = "";
+          default = "";
         };
       };
 
@@ -77,38 +77,38 @@
         icon-size = 18;
         separate-outputs = true;
         rewrite = {
-          "(.*) - Mozilla Firefox" = " $1";
-          "(.*) - Alacritty" = " $1";
+          "(.*) - Mozilla Firefox" = "󰈹 $1";
+          "(.*) - Alacritty" = " $1";
         };
       };
 
       "niri/language" = {
-        format = " {short}";
+        format = "󰌌 {short}";
       };
 
       clock = {
-        format = " {:%H:%M}";
+        format = " {:%H:%M}";
         tooltip-format = "<big>{:%Y-%m-%d}</big>\n<tt><small>{calendar}</small></tt>";
       };
 
       network = {
-        format-wifi = " {essid}";
-        format-ethernet = " {ifname}";
-        format-disconnected = " disconnected";
+        format-wifi = "󰤨 {essid}";
+        format-ethernet = "󰈀 {ifname}";
+        format-disconnected = "󰤭 disconnected";
         tooltip-format = "{ifname}: {ipaddr}/{cidr}";
       };
 
       pulseaudio = {
         format = "{icon} {volume}%";
-        format-muted = " muted";
-        format-icons.default = [ " " " " " " ];
+        format-muted = "󰝟 muted";
+        format-icons.default = [ "󰕿" "󰖀" "󰕾" ];
         on-click = "pavucontrol";
       };
 
       battery = {
         format = "{icon} {capacity}%";
-        format-charging = " {capacity}%";
-        format-icons = [ " " " " " " " " " " " " " " " " " " " " ];
+        format-charging = "󰂄 {capacity}%";
+        format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
       };
 
       tray = {
