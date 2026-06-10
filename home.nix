@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     fuzzel
     keepassxc
+    seahorse
     pavucontrol
     rustdesk-flutter
     zed-editor
@@ -68,6 +69,10 @@
     settings.user = {
       name = "Fucheng Sha";
       email = "fcsha@qq.com";
+    };
+    signing = {
+      key = "2F99B3AF794163DB7E4C1F389932A09BFB70E324";
+      signByDefault = true;
     };
   };
 
