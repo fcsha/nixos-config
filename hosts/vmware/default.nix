@@ -12,5 +12,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  virtualisation.vmware.guest.enable = true;
+
   system.stateVersion = "26.05";
 }
