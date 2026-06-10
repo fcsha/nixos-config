@@ -3,6 +3,10 @@
 {
   home.stateVersion = "26.05";
 
+  programs.bash.enable = true;
+  programs.zsh.enable = true;
+  programs.fish.enable = true;
+
   home.packages = with pkgs; [
     fuzzel
     keepassxc
@@ -11,6 +15,10 @@
     rustdesk-flutter
     zed-editor
   ];
+
+  home.shellAliases = {
+    rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
+  };
 
   gtk = {
     enable = true;
