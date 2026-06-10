@@ -14,10 +14,11 @@
   };
 
   outputs = { nixpkgs, home-manager, niri, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.vmware = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
+        ./hosts/vmware
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
