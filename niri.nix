@@ -1,10 +1,29 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+
 {
   programs.niri = {
     package = pkgs.niri;
 
     settings = {
       prefer-no-csd = true;
+
+      outputs = {
+        "Lenovo Group Limited 0x8A90 Unknown" = {
+          mode = {
+            width = 2880;
+            height = 1800;
+            refresh = 90.0;
+          };
+          scale = 2.0;
+        };
+        "PNP(AOC) LV273HUPR APMM19A005049" = {
+          mode = {
+            width = 3840;
+            height = 2160;
+          };
+          scale = 2.0;
+        };
+      };
 
       input = {
         keyboard.numlock = true;
