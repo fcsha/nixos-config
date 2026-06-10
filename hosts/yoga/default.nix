@@ -11,6 +11,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "reboot=cold" ];
 
   system.stateVersion = "26.05";
 }
