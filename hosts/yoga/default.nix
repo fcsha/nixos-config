@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "vmware";
+  networking.hostName = "yoga";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
