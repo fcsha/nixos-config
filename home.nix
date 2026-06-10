@@ -8,6 +8,7 @@
     keepassxc
     pavucontrol
     rustdesk-flutter
+    zed-editor
   ];
 
   gtk = {
