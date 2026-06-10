@@ -8,7 +8,7 @@
       prefer-no-csd = true;
 
       outputs = {
-        "" = {
+        "Virtual-1" = {
           scale = 2.0;
         };
         "Lenovo Group Limited 0x8A90 Unknown" = {
