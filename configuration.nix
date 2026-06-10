@@ -13,6 +13,8 @@
 
   nix.optimise.automatic = true;
 
+  nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
