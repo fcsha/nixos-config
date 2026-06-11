@@ -9,7 +9,7 @@
 
       outputs = {
         "Virtual-1" = {
-          scale = 2.0;
+          scale = 1.5;
         };
         "Lenovo Group Limited 0x8A90 Unknown" = {
           mode = {
