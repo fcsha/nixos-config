@@ -92,6 +92,7 @@
     nautilus
     fastfetch
     opencode
+    zenity
     fuzzel
     swaylock-effects
     swaybg
@@ -109,6 +110,8 @@
 
   programs.niri.enable = true;
   programs.dconf.enable = true;
+
+  environment.variables.SUDO_ASKPASS = pkgs.writeShellScript "askpass" "${pkgs.zenity}/bin/zenity --password --title='sudo Password'";
 
   xdg.portal = {
     enable = true;
