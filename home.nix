@@ -26,6 +26,21 @@
     rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
   };
 
+  xdg.dataFile."fcitx5/themes/minami" = {
+    source = "${pkgs.fetchFromGitHub {
+      owner = "Passthem-desu";
+      repo = "fcitx5-theme-pt-cute-light";
+      rev = "7cd3c7f61d4c3341cd8bc8337cba777a681789ba";
+      sha256 = "0cr1ci8658h2zfidswk9vn5vcz786117xh4713ckywllngbm79k9";
+    }}/minami";
+  };
+
+  xdg.configFile."fcitx5/conf/classicui.conf".text = ''
+    Vertical Candidate List=False
+    Font="Maple Mono NF CN 15"
+    Theme=minami
+  '';
+
   gtk = {
     enable = true;
     theme = {
