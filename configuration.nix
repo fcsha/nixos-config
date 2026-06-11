@@ -98,7 +98,7 @@
     fuzzel
     swaylock-effects
     swaybg
-    nodejs
+    nodejs_latest
     corepack
   ];
 
