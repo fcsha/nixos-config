@@ -98,6 +98,8 @@
     fuzzel
     swaylock-effects
     swaybg
+    nodejs
+    corepack
   ];
 
   fonts.packages = with pkgs; [
