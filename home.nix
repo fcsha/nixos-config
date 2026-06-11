@@ -35,11 +35,8 @@
     }}/minami";
   };
 
-  xdg.configFile."fcitx5/conf/classicui.conf".text = ''
-    Vertical Candidate List=False
-    Font="Maple Mono NF CN 15"
-    Theme=minami
-  '';
+  xdg.configFile."fcitx5/config".source = ./fcitx5/config;
+  xdg.configFile."fcitx5/conf/classicui.conf".source = ./fcitx5/classicui.conf;
 
   gtk = {
     enable = true;
