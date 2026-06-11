@@ -17,6 +17,8 @@
 
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
