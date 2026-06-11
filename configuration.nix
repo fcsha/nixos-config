@@ -100,6 +100,7 @@
     swaybg
     nodejs_latest
     corepack
+    bun
   ];
 
   fonts.packages = with pkgs; [
