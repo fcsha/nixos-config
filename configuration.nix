@@ -113,6 +113,12 @@
   programs.niri.enable = true;
   programs.dconf.enable = true;
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
+
   environment.variables.SUDO_ASKPASS = pkgs.writeShellScript "askpass" "${pkgs.zenity}/bin/zenity --password --title='sudo Password'";
 
   xdg.portal = {
