@@ -17,13 +17,20 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, niri, rust-overlay, ... }: {
+  outputs = { nixpkgs, home-manager, niri, rust-overlay, ... }:
+  let
+    rustOverlay = final: prev: {
+      rust-bin = rust-overlay.lib.mkRustBin {
+        distRoot = "https://mirrors.tuna.tsinghua.edu.cn/rustup/dist";
+      } final;
+    };
+  in {
     nixosConfigurations.vmware = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
         ./hosts/vmware
-        { nixpkgs.overlays = [ rust-overlay.overlays.default ]; }
+        { nixpkgs.overlays = [ rustOverlay ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -40,7 +47,7 @@
       modules = [
         ./configuration.nix
         ./hosts/yoga
-        { nixpkgs.overlays = [ rust-overlay.overlays.default ]; }
+        { nixpkgs.overlays = [ rustOverlay ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
