@@ -11,14 +11,19 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, niri, ... }: {
+  outputs = { nixpkgs, home-manager, niri, rust-overlay, ... }: {
     nixosConfigurations.vmware = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
         ./hosts/vmware
+        { nixpkgs.overlays = [ rust-overlay.overlays.default ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -35,6 +40,7 @@
       modules = [
         ./configuration.nix
         ./hosts/yoga
+        { nixpkgs.overlays = [ rust-overlay.overlays.default ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

@@ -26,6 +26,14 @@
     rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
   };
 
+  home.file.".cargo/config.toml".text = ''
+    [source.crates-io]
+    replace-with = "tuna"
+
+    [source.tuna]
+    registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
+  '';
+
   xdg.dataFile."fcitx5/themes/minami" = {
     source = "${pkgs.fetchFromGitHub {
       owner = "Passthem-desu";

@@ -101,6 +101,9 @@
     nodejs_latest
     corepack
     bun
+    (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
+      extensions = [ "rust-src" ];
+    }))
   ];
 
   fonts.packages = with pkgs; [
