@@ -106,7 +106,7 @@
           action.spawn = [
             "swaylock"
             "--image"
-            "${config.home.homeDirectory}/nixos-config/wallpapers/世界很温柔—《龙族》上杉绘梨衣.png"
+            "${config.home.homeDirectory}/nixos-config/assets/wallpapers/世界很温柔—《龙族》上杉绘梨衣.png"
             "--scaling"
             "fill"
             "--clock"
