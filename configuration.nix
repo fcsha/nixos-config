@@ -101,6 +101,7 @@
     nodejs_latest
     corepack
     bun
+    gcc
     (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
       extensions = [ "rust-src" ];
     }))
