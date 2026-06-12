@@ -19,7 +19,6 @@
     ./waybar.nix
     ./alacritty.nix
     ./niri.nix
-    ./fcitx5
     ./swaybg.nix
     ./rclone.nix
   ];
