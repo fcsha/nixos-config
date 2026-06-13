@@ -5,7 +5,7 @@
     vim
     wget
     git
-    alacritty
+    ghostty
     brave
     nautilus
     fastfetch

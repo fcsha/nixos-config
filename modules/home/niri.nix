@@ -80,22 +80,14 @@
           };
           clip-to-geometry = true;
         }
-        {
-          matches = [ { app-id = ''^org\.wezfurlong\.wezterm$''; } ];
-          default-column-width = { };
-        }
-        {
-          matches = [ { app-id = ''firefox$''; title = "^Picture-in-Picture$"; } ];
-          open-floating = true;
-        }
       ];
 
       binds = {
         "Mod+Shift+Slash" = { hotkey-overlay.title = "显示快捷键帮助"; action.show-hotkey-overlay = [ ]; };
 
         "Mod+T" = {
-          hotkey-overlay.title = "打开终端：alacritty";
-          action.spawn = "alacritty";
+          hotkey-overlay.title = "打开终端：ghostty";
+          action.spawn = "ghostty";
         };
         "Mod+D" = {
           hotkey-overlay.title = "启动应用：fuzzel";

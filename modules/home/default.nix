@@ -17,7 +17,7 @@
     ./git.nix
     ./appearance.nix
     ./waybar.nix
-    ./alacritty.nix
+    ./ghostty.nix
     ./niri.nix
     ./fcitx5
     ./swaybg.nix
