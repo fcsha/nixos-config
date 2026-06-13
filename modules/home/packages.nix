@@ -6,6 +6,7 @@
     keepassxc
     pavucontrol
     rustdesk-flutter
+    yazi
     zed-editor
   ];
 }

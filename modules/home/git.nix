@@ -6,6 +6,7 @@
     package = null;
     settings = {
       init.defaultBranch = "main";
+      credential.helper = "store";
       user = {
         name = "Fucheng Sha";
         email = "fcsha@qq.com";
