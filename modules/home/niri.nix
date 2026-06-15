@@ -7,6 +7,15 @@
     settings = {
       prefer-no-csd = true;
 
+      environment = {
+        "NIXOS_OZONE_WL" = "1";
+      };
+
+      xwayland-satellite = {
+        enable = true;
+        path = "${pkgs.xwayland-satellite}/bin/xwayland-satellite";
+      };
+
       outputs = {
         "Virtual-1" = {
           scale = 1.5;
@@ -86,8 +95,8 @@
         "Mod+Shift+Slash" = { hotkey-overlay.title = "显示快捷键帮助"; action.show-hotkey-overlay = [ ]; };
 
         "Mod+T" = {
-          hotkey-overlay.title = "打开终端：ghostty";
-          action.spawn = "ghostty";
+          hotkey-overlay.title = "打开终端：kitty";
+          action.spawn = "kitty";
         };
         "Mod+D" = {
           hotkey-overlay.title = "启动应用：fuzzel";

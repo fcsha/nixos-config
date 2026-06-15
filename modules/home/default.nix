@@ -18,6 +18,7 @@
     ./appearance.nix
     ./waybar.nix
     ./ghostty.nix
+    ./kitty.nix
     ./niri.nix
     ./fcitx5
     ./swaybg.nix

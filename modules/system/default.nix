@@ -8,5 +8,6 @@
     ./fonts.nix
     ./desktop.nix
     ./services.nix
+    ./gaming.nix
   ];
 }

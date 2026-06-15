@@ -8,5 +8,9 @@
     rustdesk-flutter
     yazi
     zed-editor
+    helix
+    neovim
+    wechat
+    qq
   ];
 }

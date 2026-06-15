@@ -11,6 +11,10 @@
 
   environment.variables.SUDO_ASKPASS = pkgs.writeShellScript "askpass" "${pkgs.zenity}/bin/zenity --password --title='sudo Password'";
 
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite
+  ];
+
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];

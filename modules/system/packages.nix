@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
+let
+  llmAgents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   environment.systemPackages = with pkgs; [
     vim
@@ -9,7 +12,10 @@
     brave
     nautilus
     fastfetch
-    opencode
+    llmAgents.opencode
+    llmAgents.claude-code
+    llmAgents.cc-switch-cli
+    llmAgents.reasonix
     zenity
     fuzzel
     swaylock-effects
