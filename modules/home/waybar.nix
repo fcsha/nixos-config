@@ -10,32 +10,21 @@
       height = 32;
       spacing = 8;
 
-      modules-left = [ "niri/workspaces" "niri/window" ];
-      modules-center = [ "clock" ];
-      modules-right = [ "niri/language" "network" "pulseaudio" "battery" "tray" ];
+      modules-left = [ "niri/workspaces" ];
+      modules-center = [ "niri/window" ];
+      modules-right = [ "tray" "network" "pulseaudio" "battery" "clock" ];
 
       "niri/workspaces" = {
-        format = "{icon}";
-        format-icons = {
-          active = "";
-          focused = "";
-          default = "";
-        };
+        format = "{index}";
       };
 
       "niri/window" = {
         format = "{title}";
-        icon = true;
-        icon-size = 18;
         separate-outputs = true;
         rewrite = {
           "(.*) - Mozilla Firefox" = "󰈹 $1";
           "(.*) - Alacritty" = " $1";
         };
-      };
-
-      "niri/language" = {
-        format = "󰌌 {short}";
       };
 
       clock = {
@@ -79,23 +68,44 @@
       }
 
       window#waybar {
-        background: rgba(30, 30, 46, 0.92);
-        color: #cdd6f4;
+        background: rgba(9, 9, 11, 0.8);
+        color: #f4f4f5;
+      }
+
+      #workspaces {
+        margin: 0;
+        padding: 0;
       }
 
       #workspaces button {
-        padding: 0 6px;
-        color: #6c7086;
+        padding: 0 10px;
+        margin: 4px 2px;
+        border-radius: 0;
+        color: #71717a;
+        background: transparent;
+        transition: all 0.2s ease;
+      }
+
+      #workspaces button:hover {
+        background: #27272a;
+        color: #f4f4f5;
       }
 
       #workspaces button.active,
       #workspaces button.focused {
-        color: #89b4fa;
+        color: #09090b;
+        background: #f4f4f5;
+        font-weight: bold;
+      }
+
+      #workspaces button.active:hover,
+      #workspaces button.focused:hover {
+        background: #e4e4e7;
+        color: #09090b;
       }
 
       #window,
       #clock,
-      #language,
       #network,
       #pulseaudio,
       #battery,
