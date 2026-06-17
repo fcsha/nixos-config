@@ -17,6 +17,7 @@
     ./git.nix
     ./appearance.nix
     ./waybar.nix
+    ./anyrun.nix
     ./ghostty.nix
     ./kitty.nix
     ./niri.nix

@@ -9,6 +9,7 @@
 
       environment = {
         "NIXOS_OZONE_WL" = "1";
+        "QT_QPA_PLATFORM" = "wayland;xcb";
       };
 
       xwayland-satellite = {
@@ -47,30 +48,20 @@
       };
 
       layout = {
-        gaps = 16;
+        gaps = 4;
         center-focused-column = "never";
+        always-center-single-column = true;
         default-column-width.proportion = 0.5;
-        preset-column-widths = [
-          { proportion = 0.33333; }
-          { proportion = 0.5; }
-          { proportion = 0.66667; }
-        ];
-        focus-ring = {
-          width = 4;
-          active.color = "#7fc8ff";
-          inactive.color = "#505050";
-        };
+      preset-column-widths = [
+        { proportion = 0.25; }
+        { proportion = 0.33333; }
+        { proportion = 0.5; }
+        { proportion = 0.66667; }
+        { proportion = 0.75; }
+      ];
+        focus-ring.enable = false;
         border.enable = false;
-        shadow = {
-          enable = false;
-          softness = 30;
-          spread = 5;
-          offset = {
-            x = 0;
-            y = 5;
-          };
-          color = "#0007";
-        };
+        shadow.enable = false;
       };
 
       spawn-at-startup = [
@@ -82,12 +73,20 @@
       window-rules = [
         {
           geometry-corner-radius = {
-            top-left = 16.0;
-            top-right = 16.0;
-            bottom-right = 16.0;
-            bottom-left = 16.0;
+            top-left = 0.0;
+            top-right = 0.0;
+            bottom-right = 0.0;
+            bottom-left = 0.0;
           };
           clip-to-geometry = true;
+        }
+        {
+          matches = [ { is-active = true; } ];
+          opacity = 0.95;
+        }
+        {
+          matches = [ { is-active = false; } ];
+          opacity = 0.9;
         }
       ];
 
@@ -99,8 +98,8 @@
           action.spawn = "kitty";
         };
         "Mod+D" = {
-          hotkey-overlay.title = "启动应用：fuzzel";
-          action.spawn = "fuzzel";
+          hotkey-overlay.title = "启动应用：anyrun";
+          action.spawn = "anyrun";
         };
         "Super+Alt+L" = {
           hotkey-overlay.title = "锁定屏幕：swaylock";
