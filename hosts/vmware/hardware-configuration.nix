@@ -13,26 +13,8 @@
 
   fileSystems."/" =
     { device = "/dev/disk/by-label/nixos";
-      fsType = "btrfs";
-      options = [ "subvol=@" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/swap" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "btrfs";
-      options = [ "subvol=@swap" "noatime" ];
+      fsType = "ext4";
+      options = [ "noatime" ];
     };
 
   fileSystems."/boot" =
@@ -40,13 +22,6 @@
       fsType = "vfat";
       options = [ "umask=0077" ];
     };
-
-  swapDevices = [
-    {
-      device = "/swap/swapfile";
-      size = 8 * 1024;
-    }
-  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

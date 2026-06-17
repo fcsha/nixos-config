@@ -9,5 +9,6 @@
     ./desktop.nix
     ./services.nix
     ./gaming.nix
+    ./zram.nix
   ];
 }
